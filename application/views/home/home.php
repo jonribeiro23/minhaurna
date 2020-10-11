@@ -14,9 +14,9 @@
 		<div class="col-10 col-sm-10 col-lg-6">
 
 				<div class="card-transparente" align="center">
-					<h3 class="card-title">Simulador Eleitoral</h3>
-					<p class="card-text">Vote em seus candidatos e veja quais estão liderando a corrida eleitoral.</p>
-					<a href="#" class="btn btn-primary btn-lg">Votar</a>
+					<h3 class="card-title mb-4">Simulador Eleitoral</h3>
+					<p class="card-text mt-3">Vote em seus candidatos e veja quais estão liderando a corrida eleitoral.</p>
+					<a href="#" class="btn btn-primary btn-lg mt-5">Votar</a>
 				</div>
 
 		</div>
@@ -28,9 +28,9 @@
 		<div class="col-10 col-sm-10 col-lg-6">
 
 				<div class="card-transparente" align="center">
-					<h3 class="card-title">Anuncie aqui</h3>
-					<p class="card-text">Você é um candidato à prefeito ou vereador? Tenha mais chances de ser eleito anunciando sua campanha conosco!</p>
-					<a href="#" class="btn btn-success btn-lg">Saiba Mais</a>
+					<h3 class="card-title mb-4">Anuncie aqui</h3>
+					<p class="card-text mt-3">Você é um candidato à prefeito ou vereador? Tenha mais chances de ser eleito anunciando sua campanha conosco!</p>
+					<a href="#" class="btn btn-success btn-lg mt-5">Saiba Mais</a>
 				</div>
 
 		</div>
@@ -42,17 +42,32 @@
 
 <script>
 	window.onload = function() {
-		console.log('executando')
+		let cardPadding = document.querySelectorAll('.card-transparente')
 		let txtSize = document.querySelectorAll('p')
+		let h3Size = document.querySelectorAll('h3')
+		let btnSize = document.querySelectorAll('.btn')
+		
 		if (screen.width < 740 || screen.height < 480) { 
+			
+			cardPadding.forEach(e => {
+				e.style.padding = '100px'
+			})
+
 			txtSize.forEach(e => {
 				e.style.fontSize = '2.9em'
-				console.log('celular')
 			})
+
+			h3Size.forEach(e => {
+				e.style.fontSize = '4.3em'
+			})
+
+			btnSize.forEach(e => {
+				e.style.fontSize = '2.9em'
+			})
+
 		} else {
 			txtSize.forEach(e => {
 				e.style.fontSize = '1.2em'
-				console.log('desk')
 			})
 		
 		}
