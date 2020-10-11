@@ -18,20 +18,25 @@
 	
 
 	<?php $this->load->view('partials/menu'); ?>	
-	<?php $this->load->view($view, $data); ?>
+	
+	<main>
+		<?php $this->load->view($view, $data); ?>	
+	</main>
 
 
-	<div class="card text-center">
+	<footer>
+		<div class="card text-center">
 		
-		<div class="card-body">
-		<a href="#" class="btn btn-outline-dark my-1">Sobre nós</a>
-		<a href="#" class="btn btn-outline-dark my-1">Contato</a>
-		<a href="#" class="btn btn-outline-dark my-1">Política de privacidade</a>
+			<div class="card-body">
+			<a href="#" class="btn btn-outline-dark my-1">Sobre nós</a>
+			<a href="#" class="btn btn-outline-dark my-1">Contato</a>
+			<a href="#" class="btn btn-outline-dark my-1">Política de privacidade</a>
+			</div>
+			<div class="card-footer text-muted">
+			Cassandra Criações &copy - 2020
+			</div>
 		</div>
-		<div class="card-footer text-muted">
-		Cassandra Criações &copy - 2020
-		</div>
-	</div>
+	</footer>
 
 </body>
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
