@@ -38,6 +38,30 @@
 	</div>
 		
 </div>		
+
+
+<script>
+	window.onload = function() {
+		console.log('executando')
+		let txtSize = document.querySelectorAll('p')
+		if (screen.width < 740 || screen.height < 480) { 
+			txtSize.forEach(e => {
+				e.style.fontSize = '2.9em'
+				console.log('celular')
+			})
+		} else {
+			txtSize.forEach(e => {
+				e.style.fontSize = '1.2em'
+				console.log('desk')
+			})
+		
+		}
+	}
+
+	// var x = window.matchMedia("(max-width: 800.98px)")
+	// myFunction(x) // Call listener function at run time
+	// x.addListener(myFunction) // Attach listener function on state changes 
+</script>
 	
 
 	
