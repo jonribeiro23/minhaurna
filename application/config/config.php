@@ -25,7 +25,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 */
 
 // $config['base_url'] = 'http://localhost/iniciacao-cientifica'; 
-$config['base_url'] = 'http://minhaurna.com.br';
+$config['base_url'] = 'https://minhaurna.com.br';
 
 /*
 |--------------------------------------------------------------------------
