@@ -37,7 +37,45 @@
 		<div class="col-1 col-sm-1 col-lg-3"></div>
 	</div>
 		
-</div>		
+</div>
+
+<script>
+	window.onload = function() {
+		let cardPadding = document.querySelectorAll('.card-transparente')
+		let txtSize = document.querySelectorAll('p')
+		let h3Size = document.querySelectorAll('h3')
+		let btnSize = document.querySelectorAll('.btn')
+		
+		if (screen.width < 740 || screen.height < 480) { 
+			
+			cardPadding.forEach(e => {
+				e.style.padding = '100px'
+			})
+
+			txtSize.forEach(e => {
+				e.style.fontSize = '2.9em'
+			})
+
+			h3Size.forEach(e => {
+				e.style.fontSize = '4.3em'
+			})
+
+			btnSize.forEach(e => {
+				e.style.fontSize = '2.9em'
+			})
+
+		} else {
+			txtSize.forEach(e => {
+				e.style.fontSize = '1.2em'
+			})
+		
+		}
+	}
+
+	// var x = window.matchMedia("(max-width: 800.98px)")
+	// myFunction(x) // Call listener function at run time
+	// x.addListener(myFunction) // Attach listener function on state changes 
+</script>	
 	
 
 	

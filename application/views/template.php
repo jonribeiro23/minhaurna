@@ -6,8 +6,8 @@
 	<title>Minha Urna</title>
 	<meta charset="utf-8">
 
-	<link href="public/css/bootstrap.css" rel="stylesheet">
-	<link href="public/css/main.css" rel="stylesheet">
+	<link href="<?= base_url('public/css/bootstrap.css')?>" rel="stylesheet">
+	<link href="<?= base_url('public/css/main.css')?>" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,700,900" rel="stylesheet">
 
 	<script src="https://kit.fontawesome.com/72c6380c9f.js"></script>
@@ -24,7 +24,7 @@
 	</main>
 
 
-	<footer>
+	<!-- <footer>
 		<div class="card text-center">
 		
 			<div class="card-body">
@@ -36,7 +36,7 @@
 			Cassandra Criações &copy - 2020
 			</div>
 		</div>
-	</footer>
+	</footer> -->
 
 </body>
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
