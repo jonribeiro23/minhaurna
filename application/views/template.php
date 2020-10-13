@@ -10,6 +10,7 @@
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<link rel="stylesheet" href="<?= base_url('public/assets/css/main.css')?>" />
+		<link rel="stylesheet" href="<?= base_url('public/css/margin.css')?>" />
 	</head>
 	<body>
 
@@ -22,9 +23,9 @@
 		<!-- Nav -->
 			<nav id="menu">
 				<ul class="links">
-					<li><a href="index.html">Home</a></li>
-					<li><a href="generic.html">Generic</a></li>
-					<li><a href="elements.html">Elements</a></li>
+					<li><a href="index.html">Início</a></li>
+					<li><a href="generic.html">Simulador</a></li>
+					<li><a href="elements.html">Anuncie aqui</a></li>
 				</ul>
 			</nav>
 
@@ -32,6 +33,20 @@
 				<main>
 					<?php $this->load->view($view, $data); ?>	
 				</main>
+
+
+			<!-- Two -->
+			<section id="two" class="wrapper style3">
+				<div class="inner">
+					<header class="align-center">
+						<p>Informações atualizadas sobre intenções de votos para seus candidatos</p>
+						<h2>Minha Urna</h2>
+						<a href="#" class="button alt">Sobre nós</a>
+						<a href="#" class="button alt">Contato</a>
+						<a href="#" class="button alt">Política de privacidade</a>
+					</header>
+				</div>
+			</section>
 
 
 		<!-- Footer -->

@@ -39,7 +39,7 @@
 									</header>
 									<p> Vote em seus candidatos e veja quais estão liderando a corrida eleitoral.</p>
 									<footer class="align-center">
-										<a href="#" class="button alt">Votar</a>
+										<a href="<?= base_url('simulador')?>" class="button alt">Votar</a>
 									</footer>
 								</div>
 							</div>
@@ -63,15 +63,5 @@
 						</div>
 
 					</div>
-				</div>
-			</section>
-
-		<!-- Two -->
-			<section id="two" class="wrapper style3">
-				<div class="inner">
-					<header class="align-center">
-						<p>Informações atualizadas sobre intenções de votos para seus candidatos</p>
-						<h2>Minha Urna</h2>
-					</header>
 				</div>
 			</section>

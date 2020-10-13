@@ -1,37 +1,75 @@
-<link href="<?= base_url('public/css/simulador.css')?>" rel="stylesheet">
 
 
-<div class="container-urna">
-	<div class="branco">
-		<div class="cinzaClaro">
-			<img class="foto-urna" src="https://lh3.googleusercontent.com/-3H3Zmv8LwnU/VHeSXvvTF-I/AAAAAAAABys/7QfuK6hvuqM/w406-h577-no/clarinha-vem.jpg" alt="" />
-			<p>Número:</p>
-			<form action="">
-				<input size="1" maxlength="1" type="text" />
-				<input size="1" maxlength="1" type="text" />
-			</form>
-			<p>Nome:</p>
+<!-- Banner -->
+<section class="banner full">
+	<article>
+		<img class="fit" src="<?= base_url('public/img/background.png') ?>" alt="" />
+		<div class="inner">
+			<header>
+				<h2>Simulador</h2>
+			</header>
 		</div>
-		<div class="cinzaEscuro">
-		 <b>JUSTIÇA<br>ELEITORAL</b> 
+	</article>
+				
+</section>
+
+<!-- One -->
+<section id="one" class="wrapper style2">
+	<div class="inner">
+		<div class="">
+
+			<div>
+				<div class="box">
+					<div class="image fit">
+						<img src="<?= base_url('public/img/home/urna.png')?>" alt="" />
+					</div>
+					<div class="content">
+						<header class="align-center">
+							<h2>Simulador Eleitoral</h2>
+						</header>
+
+						<div class="12u$ my-4">
+							<div class="select-wrapper">
+								<label for="estado">Estado</label>
+								<select name="estado" id="estado">
+									<option value="">- Meu Estado -</option>
+									<option value="1">Manufacturing</option>
+									<option value="1">Shipping</option>
+									<option value="1">Administration</option>
+									<option value="1">Human Resources</option>
+								</select>
+							</div>
+						</div>
+
+						<div class="12u$ my-4">
+							<div class="select-wrapper">
+								<label for="cidade">Cidade</label>
+								<select name="cidade" id="cidade">
+									<option value="">- Minha Cidade -</option>
+									<option value="1">Manufacturing</option>
+									<option value="1">Shipping</option>
+									<option value="1">Administration</option>
+									<option value="1">Human Resources</option>
+								</select>
+							</div>
+						</div>
+
+						<div class="6u$ 12u$(xsmall) my4">
+							<label for="email">Email</label>
+							<input type="email" name="email" id="email" value="" placeholder="Meu email" />
+						</div>
+
+						<p class="my-2">Seu email será usado apenas para a contagem dos votos. Não iremos te enviar nenhuma mensagem.</p>
+
+						<footer class="align-center">
+							<a href="#" class="button alt">Próximo</a>
+						</footer>
+					</div>
+				</div>
+			</div>
+
+			
+
 		</div>
-		<div class="preto">
-			<button class="bnt click">1</button>
-			<button class="bnt click">2</button>
-			<button class="bnt click">3</button>
-			<button class="bnt click">4</button>
-			<button class="bnt click">5</button>
-			<button class="bnt click">6</button>
-			<button class="bnt click">7</button>
-			<button class="bnt click">8</button>
-			<button class="bnt click">9</button>
-			<button class="bnt click">0</button>
-		<div class="teclado2">
-			<button class="branco  click">BRANCO</button>
-			<button class="laranja  click">CORRIGE</button>
-			<button class="verde">CONFIRMA</button>
-		 </div>
-		</div>
-				 <link rel="stylesheet" href="" />
 	</div>
-</div>
+</section>
