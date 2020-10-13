@@ -1,46 +1,60 @@
-<!Doctype html>
+<!DOCTYPE HTML>
+<!--
+	Hielo by TEMPLATED
+	templated.co @templatedco
+	Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
+-->
+<html>
+	<head>
+		<title>Minha Urna</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="stylesheet" href="<?= base_url('public/assets/css/main.css')?>" />
+	</head>
+	<body>
 
-<html lang="pt-br">
+		<!-- Header -->
+			<header id="header" class="alt">
+				<div class="logo"><a href="<?= base_url() ?>"><img class="fit" src="<?= base_url('public/img/logo2.png') ?>"></a></div>
+				<a href="#menu">Menu</a>
+			</header>
 
-<head>
-	<title>Minha Urna</title>
-	<meta charset="utf-8">
-
-	<link href="<?= base_url('public/css/bootstrap.css')?>" rel="stylesheet">
-	<link href="<?= base_url('public/css/main.css')?>" rel="stylesheet">
-	<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,700,900" rel="stylesheet">
-
-	<script src="https://kit.fontawesome.com/72c6380c9f.js"></script>
-</head>
-
-<body>
-
-	
-
-	<?php $this->load->view('partials/menu'); ?>	
-	
-	<main>
-		<?php $this->load->view($view, $data); ?>	
-	</main>
+		<!-- Nav -->
+			<nav id="menu">
+				<ul class="links">
+					<li><a href="index.html">Home</a></li>
+					<li><a href="generic.html">Generic</a></li>
+					<li><a href="elements.html">Elements</a></li>
+				</ul>
+			</nav>
 
 
-	<!-- <footer>
-		<div class="card text-center">
-		
-			<div class="card-body">
-			<a href="#" class="btn btn-outline-dark my-1">Sobre nós</a>
-			<a href="#" class="btn btn-outline-dark my-1">Contato</a>
-			<a href="#" class="btn btn-outline-dark my-1">Política de privacidade</a>
-			</div>
-			<div class="card-footer text-muted">
-			Cassandra Criações &copy - 2020
-			</div>
-		</div>
-	</footer> -->
+				<main>
+					<?php $this->load->view($view, $data); ?>	
+				</main>
 
-</body>
-<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
+		<!-- Footer -->
+			<footer id="footer">
+				<div class="container">
+					<ul class="icons">
+						<li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+						<li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
+						<li><a href="#" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
+						<li><a href="#" class="icon fa-envelope-o"><span class="label">Email</span></a></li>
+					</ul>
+				</div>
+				<div class="copyright">
+					&copy; Cassandra Criações. All rights reserved.
+				</div>
+			</footer>
+
+		<!-- Scripts -->
+			<script src="<?= base_url('public/assets/js/jquery.min.js')?>"></script>
+			<script src="<?= base_url('public/assets/js/jquery.scrollex.min.js')?>"></script>
+			<script src="<?= base_url('public/assets/js/skel.min.js')?>"></script>
+			<script src="<?= base_url('public/assets/js/util.js')?>"></script>
+			<script src="<?= base_url('public/assets/js/main.js')?>"></script>
+
+	</body>
 </html>
