@@ -56,7 +56,7 @@
 									</header>
 									<p> Você é um candidato à prefeito ou vereador? Tenha mais chances de ser eleito anunciando sua campanha conosco!</p>
 									<footer class="align-center">
-										<a href="#" class="button alt">Saiba mais</a>
+										<a href="<?= base_url('anuncie-conosco')?>" class="button alt">Saiba mais</a>
 									</footer>
 								</div>
 							</div>

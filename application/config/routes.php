@@ -9,5 +9,7 @@ $route['translate_uri_dashes'] = FALSE;
 
 # Simulador
 $route['simulador'] = 'Simulador';
-$route['simulador-teste'] = 'Simulador/teste';
-$route['simulador-teste2'] = 'Simulador/teste2';
+$route['votacao'] = 'Simulador/votacao';
+
+#Anúncios
+$route['anuncie-conosco'] = 'Anuncios';

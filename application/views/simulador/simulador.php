@@ -59,10 +59,10 @@
 							<input type="email" name="email" id="email" value="" placeholder="Meu email" />
 						</div>
 
-						<p class="my-2">Seu email será usado apenas para a contagem dos votos. Não iremos te enviar nenhuma mensagem.</p>
+						<p class="my-2">O seu voto é secreto. Seu email será usado apenas para a contagem dos votos. Não iremos te enviar nenhuma mensagem nem divulgar quais os seu candidatos preferidos.</p>
 
 						<footer class="align-center">
-							<a href="#" class="button alt">Próximo</a>
+							<a href="<?= base_url('votacao')?>" class="button alt">Próximo</a>
 						</footer>
 					</div>
 				</div>

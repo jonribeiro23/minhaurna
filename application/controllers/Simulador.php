@@ -6,8 +6,8 @@ class Simulador extends CI_Controller {
 		$this->load->view('template.php', ['view' => 'simulador/simulador', 'data' => []]);
 	}
 
-	public function teste() {
-		$this->load->view('template.php', ['view' => 'simulador/teste', 'data' => []]);
+	public function votacao() {
+		$this->load->view('template.php', ['view' => 'simulador/votacao', 'data' => []]);
 	}
 
 	public function teste2() {
