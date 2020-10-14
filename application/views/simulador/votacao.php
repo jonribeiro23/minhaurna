@@ -45,7 +45,7 @@
 					<div class="content">
 						<div class="12u$ my-4">
 							<label for="vereador">Seu voto para vereador</label>
-							<input type="text" name="vereador" id="vereador" value="" placeholder="Ex: 99999" />
+							<input type="text" name="vereador" id="numeroVereador" value="" placeholder="Ex: 99999" />
 						</div>
 
 						<footer class="align-center">
@@ -77,7 +77,12 @@
 				<div class="box">
 					<div class="content">
 						<footer class="align-center">
-							<a href="#" class="button special big"><span style="color: white;">Finalizar</span></a>
+							<form>
+								<input type="" name="email" id="email" value="<?= $email ?>">
+								<input type="" name="cidade" id="cidade" value="<?= $cidade ?>">
+								<input type="" name="estado" id="estado" value="<?= $estado ?>">
+								<a href="#" class="button special big"><span style="color: white;">Finalizar</span></a>
+							</form>
 						</footer>
 					</div>
 				</div>
@@ -90,7 +95,6 @@
 
 <!-- Modal Vereador -->
 <div id="modalVereador" class="modal">
-	 <!-- Modal content -->
 	<div class="modal-content">
 		<div class="modal-header" align="center">
 			<span class="close">&times;</span>
@@ -101,17 +105,23 @@
 						<div class="box alt">
 							<div class="row 50% uniform">
 								<div class=" 2u"></div>
-								<div class=" 8u"><span class="image fit"><a href="<?= base_url('anuncie-conosco')?>"> <img src="https://www.diariocidade.com/public/eleicoes/2020/sp/santos/candidatos/vereador/aline-e-a-bancada-estudantil-65180.jpg" alt="" /></a></span>
+								<div class=" 8u"><span class="image fit"><a href="<?= base_url('anuncie-conosco')?>"> <img id="fotoVereador" alt="foto do candidato" /></a></span>
 								</div>
 								<div class=" 2u"></div>
 							</div>
 						</div>
 					</div>
 			
+			<!-- <div class="">
+				<p><strong>Nome:</strong> <span id="nomeVereador">Aline e A Bancada Estudantil</span></p>
+				<p><strong>Número:</strong> <span id="numeroVereadorUrna">65180</span></p>
+				<p><strong>Partido:</strong> <span id="partidoVereador">PC do B - Partido Comunista do Brasil</span></p>
+			</div> -->
+
 			<div class="">
-				<p><strong>Nome:</strong> Aline e A Bancada Estudantil</p>
-				<p><strong>Número:</strong> 65180</p>
-				<p><strong>Partido:</strong> PC do B - Partido Comunista do Brasil</p>
+				<p><strong>Nome:</strong> <span id="nomeVereador"></span></p>
+				<p><strong>Número:</strong> <span id="numeroVereadorUrna"></span></p>
+				<p><strong>Partido:</strong> <span id="partidoVereador"></span></p>
 			</div>
 		</div>
 		<div class="modal-footer">
@@ -122,7 +132,6 @@
 
 <!-- Modal Prefeito -->
 <div id="modalPrefeito" class="modal">
-	 <!-- Modal content -->
 	<div class="modal-content">
 		<div class="modal-header" align="center">
 			<span class="close2">&times;</span>
@@ -165,10 +174,7 @@
 
 		}
 	}
-
-	// var x = window.matchMedia("(max-width: 800.98px)")
-	// myFunction(x) // Call listener function at run time
-	// x.addListener(myFunction) // Attach listener function on state changes 
 </script> 
 
 <script src="<?= base_url('public/js/modal.js')?>"></script>
+
