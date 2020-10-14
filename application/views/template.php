@@ -23,9 +23,9 @@
 		<!-- Nav -->
 			<nav id="menu">
 				<ul class="links">
-					<li><a href="index.html">Início</a></li>
-					<li><a href="generic.html">Simulador</a></li>
-					<li><a href="elements.html">Anuncie aqui</a></li>
+					<li><a href="<?= base_url() ?>">Início</a></li>
+					<li><a href="<?= base_url('simulador') ?>">Simulador</a></li>
+					<li><a href="<?= base_url('anuncie-conosco') ?>">Anuncie aqui</a></li>
 				</ul>
 			</nav>
 

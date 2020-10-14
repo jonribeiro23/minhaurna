@@ -9,8 +9,7 @@
 				<h2>Simulador</h2>
 			</header>
 		</div>
-	</article>
-				
+	</article>				
 </section>
 
 <!-- One -->
