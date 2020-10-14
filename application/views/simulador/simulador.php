@@ -123,7 +123,8 @@ Enter your name: <input type="text" id="fname" onblur="myFunction()">
 
 
 		(async () => {
-		  const rawResponse = await fetch('http://127.0.0.1:5000/listar_cidades', {
+		  // const rawResponse = await fetch('http://127.0.0.1:5000/listar_cidades', {
+		  const rawResponse = await fetch('https://minha-urna.herokuapp.com/listar_cidades', {
 		    method: 'POST',
 		    headers: {
 		      'Accept': 'application/json',
