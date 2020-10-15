@@ -24,7 +24,8 @@ btnVereador.onclick = function() {
 			let dados = {
 				"cidade": cidade,
 				"estado": estado,
-				"numero": numero
+				"numero": numero,
+				"cargo": "VEREADOR"
 			}
 			// console.log(dados)
 			
@@ -90,7 +91,8 @@ btnPrefeito.onclick = function() {
 			let dados = {
 				"cidade": cidade,
 				"estado": estado,
-				"numero": numero
+				"numero": numero,
+				"cargo": "PREFEITO"
 			}
 			// console.log(dados)
 			
