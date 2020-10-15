@@ -45,7 +45,8 @@ class Simulador extends CI_Controller {
 
 	}
 
-	public function teste2() {
-		$this->load->view('template.php', ['view' => 'simulador/teste2', 'data' => []]);
+	public function computarVoto() {
+		var_dump($this->input->post());
+		// $this->load->view('template.php', ['view' => 'simulador/teste2', 'data' => []]);
 	}
 }

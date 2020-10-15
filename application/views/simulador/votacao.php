@@ -37,39 +37,42 @@
 
 				<header class="align-center">
 					<h2>Simulador Eleitoral</h2>
-					<p>Digite o número do candidato ou se quiser votar em branco, clique no botão "Branco". Depois clique em "Confirmar".</p>
+					<p>Digite o número do candidato ou se quiser votar em branco/nulo, clique no botão "Branco/Nulo". Depois clique em "Confirmar".</p>
 				</header>
 				
 				<!-- VEREADOR -->
 				<div class="box">
-					<div class="content">
-						<div class="12u$ my-4">
-							<label for="vereador">Seu voto para vereador</label>
-							<input type="text" name="vereador" id="numeroVereador" value="" placeholder="Ex: 99999" />
-						</div>
+					<div id="vereadorEscolhido" class="content">
+						<div id="divVereador">
+							
+							<div class="12u$ my-4">
+								<label for="vereador">Seu voto para vereador</label>
+								<input type="text" name="vereador" id="numeroVereador" value="" placeholder="Ex: 99999" />
+							</div>
 
-						<footer class="align-center">
-							<button class="button alt my-3">Branco</button>
-							<button class="button alt my-3" style="background-color: #fe630c">Corrigir</button>
-							<button id="btnVereador" class="button alt" style='background-color: green'><span style="color: white;">Confirmar</span></button>
-						</footer>
+							<footer class="align-center">
+								<button onclick="brancoVereador()" class="button alt my-3">Branco/Nulo</button>
+								<button id="btnVereador" class="button alt" style='background-color: green'><span style="color: white;">Confirmar</span></button>
+							</footer>
+						</div>
 					</div>
 				</div>
 
 				<!-- PREFEITO -->
 				<div class="box">
 
-					<div class="content">
-						<div class="12u$ my-4">
-							<label for="prefeito">Seu voto para prefeito</label>
-							<input type="text" name="prefeito" id="prefeito" value="" placeholder="Ex: 99" />
-						</div>
+					<div id="prefeitoEscolhido" class="content">
+						<div id="divPrefeito">
+							<div class="12u$ my-4">
+								<label for="prefeito">Seu voto para prefeito</label>
+								<input type="text" name="prefeito" id="numeroPrefeito" value="" placeholder="Ex: 99" />
+							</div>
 
-						<footer class="align-center">
-							<button class="button alt my-3">Branco</button>
-							<button class="button alt my-3" style="background-color: #fe630c">Corrigir</button>
-							<button id="btnPrefeito" class="button alt" style='background-color: green'><span style="color: white;">Confirmar</span></button>
-						</footer>
+							<footer class="align-center">
+								<button onclick="brancoPrefeito()" class="button alt my-3">Branco/Nulo</button>
+								<button id="btnPrefeito" class="button alt" style='background-color: green'><span style="color: white;">Confirmar</span></button>
+							</footer>
+						</div>
 					</div>
 				</div>
 
@@ -77,11 +80,13 @@
 				<div class="box">
 					<div class="content">
 						<footer class="align-center">
-							<form>
-								<input type="" name="email" id="email" value="<?= $email ?>">
-								<input type="" name="cidade" id="cidade" value="<?= $cidade ?>">
-								<input type="" name="estado" id="estado" value="<?= $estado ?>">
-								<a href="#" class="button special big"><span style="color: white;">Finalizar</span></a>
+							<form action="<?= base_url('computar-voto') ?>" method="post">
+								<div id="votos">
+									<input type="hidden" name="email" id="email" value="<?= $email ?>">
+									<input type="hidden" name="cidade" id="cidade" value="<?= $cidade ?>">
+									<input type="hidden" name="estado" id="estado" value="<?= $estado ?>">
+								</div>
+								<button type="submit" href="#" class="button special big"><span style="color: white;">Finalizar</span></button>
 							</form>
 						</footer>
 					</div>
@@ -102,15 +107,15 @@
 		</div>
 		<div class="modal-body" align="center">
 			<div class="box" >
-						<div class="box alt">
-							<div class="row 50% uniform">
-								<div class=" 2u"></div>
-								<div class=" 8u"><span class="image fit"><a href="<?= base_url('anuncie-conosco')?>"> <img id="fotoVereador" alt="foto do candidato" /></a></span>
-								</div>
-								<div class=" 2u"></div>
-							</div>
+				<div  class="box alt">
+					<div id="boxVereador" class="row 50% uniform">
+						<div class=" 2u"></div>
+						<div class=" 8u"><span class="image fit"><a href="<?= base_url('anuncie-conosco')?>"> <img id="fotoVereador" alt="foto do candidato" /></a></span>
 						</div>
+						<div class=" 2u"></div>
 					</div>
+				</div>
+			</div>
 			
 			<!-- <div class="">
 				<p><strong>Nome:</strong> <span id="nomeVereador">Aline e A Bancada Estudantil</span></p>
@@ -118,14 +123,18 @@
 				<p><strong>Partido:</strong> <span id="partidoVereador">PC do B - Partido Comunista do Brasil</span></p>
 			</div> -->
 
-			<div class="">
-				<p><strong>Nome:</strong> <span id="nomeVereador"></span></p>
-				<p><strong>Número:</strong> <span id="numeroVereadorUrna"></span></p>
-				<p><strong>Partido:</strong> <span id="partidoVereador"></span></p>
+			<div id="novosDados">
+				<div id="dadosVereador">
+					<p><strong>Nome:</strong> <span id="nomeVereador"></span></p>
+					<p><strong>Número:</strong> <span id="numeroVereadorUrna"></span></p>
+					<p><strong>Partido:</strong> <span id="partidoVereador"></span></p>
+				</div>
 			</div>
 		</div>
 		<div class="modal-footer">
-			<button class="button alt close" style='background-color: green'><span style="color: white;">Confirmar</span></button>
+			<button onclick="corrigeVereador()" class="button alt close" style="background-color: #fe630c"><span style="color: white;">Corrige</span></button>
+
+			<button onclick="confirmarVereador()" class="button alt close" style='background-color: green'><span style="color: white;">Confirmar</span></button>
 		</div>
 	</div> 
 </div> 
@@ -140,23 +149,27 @@
 		<div class="modal-body" align="center">
 			<div class="box" >
 						<div class="box alt">
-							<div class="row 50% uniform">
-								<div class=" 2u"></div>
-								<div class=" 8u"><span class="image fit"><a href="<?= base_url('anuncie-conosco')?>"> <img src="https://www.diariocidade.com/public/eleicoes/2020/sp/santos/candidatos/prefeito/delegado-romano-27.jpg" alt="" /></a></span>
+							<div id="boxPrefeito" class="row 50% uniform">
+								<div class=" 4u"></div>
+								<div class=" 4u"><span class="image fit"><a href="<?= base_url('anuncie-conosco')?>"> <img id="fotoPrefeito" alt="" /></a></span>
 								</div>
-								<div class=" 2u"></div>
+								<div class=" 4u"></div>
 							</div>
 						</div>
 					</div>
 			
-			<div class="">
-				<p><strong>Nome:</strong> Delegado Romano</p>
-				<p><strong>Número:</strong> 27</p>
-				<p><strong>Partido:</strong> DC - Democracia Cristã</p>
+			<div id="novosDadosPrefeito">
+				<div id="dadosPrefeito" class="">
+					<p><strong>Nome: </strong> <span id="nomePrefeito"></span></p>
+					<p><strong>Número: </strong> <span id="numeroPrefeitoUrna"></span></p>
+					<p><strong>Partido: </strong> <span id="partidoPrefeito"></span></p>
+				</div>
 			</div>
 		</div>
 		<div class="modal-footer">
-			<button class="button alt close" style='background-color: green'><span style="color: white;">Confirmar</span></button>
+			<button onclick="corrigePrefeito()" class="button alt close" style="background-color: #fe630c"><span style="color: white;">Corrige</span></button>
+
+			<button onclick="confirmarPrefeito()" class="button alt close" style='background-color: green'><span style="color: white;">Confirmar</span></button>
 		</div>
 	</div> 
 </div>
@@ -177,4 +190,5 @@
 </script> 
 
 <script src="<?= base_url('public/js/modal.js')?>"></script>
+<script src="<?= base_url('public/js/votar.js')?>"></script>
 
