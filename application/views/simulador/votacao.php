@@ -85,8 +85,10 @@
 									<input type="hidden" name="email" id="email" value="<?= $email ?>">
 									<input type="hidden" name="cidade" id="cidade" value="<?= $cidade ?>">
 									<input type="hidden" name="estado" id="estado" value="<?= $estado ?>">
+									<input type="hidden" name="votoVereador" id="votoVereador" value="">
+									<input type="hidden" name="votoPrefeito" id="votoPrefeito" value="">
 								</div>
-								<button type="submit" href="#" class="button special big"><span style="color: white;">Finalizar</span></button>
+								<button id="btnFinalizar" disabled type="submit" href="#" class="button special big"><span style="color: white;">Finalizar</span></button>
 							</form>
 						</footer>
 					</div>

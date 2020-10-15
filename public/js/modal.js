@@ -71,7 +71,7 @@ btnVereador.onclick = function() {
 		boxVereador.parentNode.removeChild(boxVereador)
 		dadosVereador.parentNode.removeChild(dadosVereador)
 
-		advertencia.innerText = 'Deseja mesmo votar em Branco/Nulo?'
+		advertencia.innerText = 'Votar em Branco/Nulo'
 		novosDados.appendChild(advertencia)
 
 	}
@@ -137,7 +137,7 @@ btnPrefeito.onclick = function() {
 		boxPrefeito.parentNode.removeChild(boxPrefeito)
 		dadosPrefeito.parentNode.removeChild(dadosPrefeito)
 
-		advertencia.innerText = 'Deseja mesmo votar em Branco/Nulo?'
+		advertencia.innerText = 'Votar em Branco/Nulo'
 		novosDadosPrefeito.appendChild(advertencia)
 	}
 }

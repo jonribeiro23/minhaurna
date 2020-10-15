@@ -42,8 +42,8 @@ function confirmarVereador(){
 	let dadosVereador = document.querySelector('#novosDados')
 	let divVereador = document.querySelector('#divVereador')
 	let vereadorEscolhido = document.querySelector('#vereadorEscolhido')
+	let inputVereador = document.querySelector('#votoVereador')
 	
-	let inputVereador = document.createElement('input')
 	let h3 = document.createElement('h3')
 
 	h3.innerText = 'Vereador escolhido:'
@@ -54,8 +54,6 @@ function confirmarVereador(){
 
 	// SETANDO DADOS PARA COMPUTAR VOTO
 	inputVereador.setAttribute('value', vereador)
-	inputVereador.setAttribute('name', 'votoVereador')
-	inputVereador.setAttribute('type', 'hidden')
 
 	// COLOCANDO DADOS DO VEREADOR ESCOLHIDO NA DIVI
 	vereadorEscolhido.appendChild(h3)
@@ -72,8 +70,8 @@ function confirmarPrefeito(){
 	let dadosPrefeito = document.querySelector('#novosDadosPrefeito')
 	let divPrefeito = document.querySelector('#divPrefeito')
 	let prefeitoEscolhido = document.querySelector('#prefeitoEscolhido')
+	let inputPrefeito = document.querySelector('#votoPrefeito')
 	
-	let inputPrefeito = document.createElement('input')
 	let h3 = document.createElement('h3')
 
 	h3.innerText = 'Prefeito escolhido:'
@@ -84,12 +82,25 @@ function confirmarPrefeito(){
 
 	// SETANDO DADOS PARA COMPUTAR VOTO
 	inputPrefeito.setAttribute('value', prefeito)
-	inputPrefeito.setAttribute('name', 'votoPrefeito')
-	inputPrefeito.setAttribute('type', 'hidden')
 
 	// COLOCANDO DADOS DO VEREADOR ESCOLHIDO NA DIVI
 	prefeitoEscolhido.appendChild(h3)
 	prefeitoEscolhido.appendChild(dadosPrefeito)
 	votos.appendChild(inputPrefeito)
 	modalPrefeito.style.display = "none"
+	ativaBtnFinalizar()
+}
+
+
+function ativaBtnFinalizar(){
+	let votoVereador = document.querySelector('#votoVereador').value
+	let votoPrefeito = document.querySelector('#votoPrefeito').value
+	let btnFinalizar = document.querySelector('#btnFinalizar')
+
+	if((votoVereador != '' && votoVereador != null) && (votoPrefeito != '' && votoPrefeito != null)){
+		btnFinalizar.removeAttribute('disabled')
+	}else{
+		alert('Preencha todos os votos.')
+	}
+
 }
