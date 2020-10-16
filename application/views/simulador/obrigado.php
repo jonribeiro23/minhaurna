@@ -19,7 +19,7 @@
 			<div>
 				<div class="box">
 					<div class="content">
-						<h4>Candidatos a Vereadores</h4>
+						<h4>Candidatos a Vereador</h4>
 						<div class="table-wrapper">
 							<table>
 								<thead>
@@ -44,12 +44,12 @@
 								<?php } ?>
 									
 								</tbody>
-								<tfoot>
+								<!-- <tfoot>
 									<tr>
 										<td colspan="2"></td>
 										<td>100.00</td>
 									</tr>
-								</tfoot>
+								</tfoot> -->
 							</table>
 						</div>		
 					</div>
@@ -59,7 +59,7 @@
 			<div>
 				<div class="box">
 					<div class="content">
-						<h4>Candidatos a Vereadores</h4>
+						<h4>Candidatos a Prefeito</h4>
 						<div class="table-wrapper">
 							<table>
 								<thead>
@@ -84,12 +84,12 @@
 								<?php } ?>
 									
 								</tbody>
-								<tfoot>
+								<!-- <tfoot>
 									<tr>
 										<td colspan="2"></td>
 										<td>100.00</td>
 									</tr>
-								</tfoot>
+								</tfoot> -->
 							</table>
 						</div>		
 					</div>
