@@ -29,8 +29,8 @@ btnVereador.onclick = function() {
 			}
 			// console.log(dados)
 			
-			// const rawResponse = await fetch('https://minha-urna.herokuapp.com/listar_cidades', {
-			const rawResponse = await fetch('http://localhost:5000/selecionar_candidatos', {
+			const rawResponse = await fetch('https://minha-urna.herokuapp.com/selecionar_candidatos', {
+			// const rawResponse = await fetch('http://localhost:5000/selecionar_candidatos', {
 				method: 'POST',
 				headers: {
 						'Accept': 'application/json',
@@ -96,8 +96,8 @@ btnPrefeito.onclick = function() {
 			}
 			// console.log(dados)
 			
-			// const rawResponse = await fetch('https://minha-urna.herokuapp.com/listar_cidades', {
-			const rawResponse = await fetch('http://localhost:5000/selecionar_candidatos', {
+			const rawResponse = await fetch('https://minha-urna.herokuapp.com/selecionar_candidatos', {
+			// const rawResponse = await fetch('http://localhost:5000/selecionar_candidatos', {
 				method: 'POST',
 				headers: {
 						'Accept': 'application/json',

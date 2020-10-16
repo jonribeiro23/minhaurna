@@ -24,10 +24,11 @@
 					</div>
 					<div class="content">
 						<header class="align-center">
-							<h2>Simulador Eleitoral</h2>
+							<h2>Resultados</h2>
+							<p>Informe seu estado e sua cidade</p>
 						</header>
 					
-					<form action="<?= base_url('votacao')?>" method="post">
+					<form action="<?= base_url('contagem-de-votos')?>" method="post">
 						
 					
 						<div class="12u$ my-4">
@@ -77,12 +78,7 @@
 							</div>
 						</div>
 
-						<div class="6u$ 12u$(xsmall) my4">
-							<label for="email">Email</label>
-							<input type="email" name="email" id="email" required="" value="" placeholder="Meu email" />
-						</div>
-
-						<p class="my-2">O seu voto é secreto. Seu email será usado apenas para a contagem dos votos. Não iremos te enviar nenhuma mensagem nem divulgar quais os seu candidatos preferidos.</p>
+						
 
 						<footer class="align-center">
 							<button type="submit" class="button alt">Próximo</button>

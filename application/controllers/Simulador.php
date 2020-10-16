@@ -7,12 +7,14 @@ class Simulador extends CI_Controller {
 	}
 
 	public function votacao() {
-		$verificarSeJaVotou = $this->enviaRequest('http://localhost:5000/verificar_voto', json_encode(['email'=> $this->input->post('email')]));
+		// $url_base = 'http://localhost:5000/';
+		$url_base = 'https://minha-urna.herokuapp.com/';
+		$verificarSeJaVotou = $this->enviaRequest($url_base.'verificar_voto', json_encode(['email'=> $this->input->post('email')]));
 
 		if($verificarSeJaVotou->msg){
 			return redirect(base_url('ja-votou'));
 		}
-		
+
 		$dados = $this->input->post();
 		$data = [
 			'email'=> $this->input->post('email'),
@@ -24,8 +26,9 @@ class Simulador extends CI_Controller {
 	}
 
 	public function computarVoto() {
-
-		$verificarSeJaVotou = $this->enviaRequest('http://localhost:5000/verificar_voto', json_encode(['email'=> $this->input->post('email')]));
+		// $url_base = 'http://localhost:5000/';
+		$url_base = 'https://minha-urna.herokuapp.com/';
+		$verificarSeJaVotou = $this->enviaRequest($url_base.'verificar_voto', json_encode(['email'=> $this->input->post('email')]));
 
 		if($verificarSeJaVotou->msg){
 			return redirect(base_url('ja-votou'));
@@ -39,7 +42,7 @@ class Simulador extends CI_Controller {
 		]);
 
 
-		$res = $this->enviaRequest('http://localhost:5000/computar_voto', $package);
+		$res = $this->enviaRequest($url_base.'computar_voto', $package);
 		
 		if($res->status == 'ok'){
 			$packageVereador = json_encode([
@@ -54,8 +57,8 @@ class Simulador extends CI_Controller {
 				'cargo'  => '11'
 			]);
 
-			$contagem_de_votos_vereadores = $this->enviaRequest('http://127.0.0.1:5000/selecionar_candidatos_resultados', $packageVereador);
-			$contagem_de_votos_prefeito = $this->enviaRequest('http://127.0.0.1:5000/selecionar_candidatos_resultados', $packagePrefeito);
+			$contagem_de_votos_vereadores = $this->enviaRequest($url_base.'selecionar_candidatos_resultados', $packageVereador);
+			$contagem_de_votos_prefeito = $this->enviaRequest($url_base.'selecionar_candidatos_resultados', $packagePrefeito);
 
 			
 			// ONDENANDO VEREADORES POR QTD DE VOTOS
@@ -101,11 +104,70 @@ class Simulador extends CI_Controller {
 		// $this->load->view('template.php', ['view' => 'simulador/teste2', 'data' => []]);
 	}
 
-
 	public function jaVotou(){
 		return $this->load->view('template.php', ['view' => 'simulador/ja-votou', 'data' => []]);
 	}
 
+	public function resultados(){
+		return $this->load->view('template.php', ['view' => 'simulador/resultados', 'data' => []]);	
+	}
+
+	public function contagemVotos(){
+		// $url_base = 'http://localhost:5000/';
+		$url_base = 'https://minha-urna.herokuapp.com/';
+		$packageVereador = json_encode([
+			'estado' => $this->input->post('estado'),
+			'cidade' => $this->input->post('cidade'),
+			'cargo'  => '13'
+		]);
+
+		$packagePrefeito = json_encode([
+			'estado' => $this->input->post('estado'),
+			'cidade' => $this->input->post('cidade'),
+			'cargo'  => '11'
+		]);
+
+		$contagem_de_votos_vereadores = $this->enviaRequest($url_base.'selecionar_candidatos_resultados', $packageVereador);
+		$contagem_de_votos_prefeito = $this->enviaRequest($url_base.'selecionar_candidatos_resultados', $packagePrefeito);
+
+
+			// ONDENANDO VEREADORES POR QTD DE VOTOS
+		$vereadores = (array) $contagem_de_votos_vereadores->msg;
+		$vereadores = array_map(function($arr){
+			return (array) $arr;
+		}, $vereadores);
+
+		usort($vereadores, function ($a, $b){
+			$key = 'votos';
+			if($a[$key] < $b[$key]){
+				return 1;
+			}else if($a[$key] > $b[$key]){
+				return -1;
+			}
+			return 0;
+		});
+
+			// ONDENANDO PREFEITOS POR QTD DE VOTOS
+		$prefeitos = (array) $contagem_de_votos_prefeito->msg;
+		$prefeitos = array_map(function($arr){
+			return (array) $arr;
+		}, $prefeitos);
+
+		usort($prefeitos, function ($a, $b){
+			$key = 'votos';
+			if($a[$key] < $b[$key]){
+				return 1;
+			}else if($a[$key] > $b[$key]){
+				return -1;
+			}
+			return 0;
+		});
+
+
+
+		$data = ['vereadores' => $vereadores, 'prefeitos' => $prefeitos];
+		$this->load->view('template.php', ['view' => 'simulador/contagem-votos', 'data' => $data]);
+	}
 
 	public function enviaRequest($url, $package){
 		$to_send = json_encode($package);
@@ -120,7 +182,7 @@ class Simulador extends CI_Controller {
 		curl_setopt($ch, CURLOPT_HTTPHEADER, array(
 			'Content-Type: application/json',
 			'Content-Length: ' . strlen($to_send))
-	);
+		);
 
 		$res = curl_exec($ch);
 		curl_close($ch);

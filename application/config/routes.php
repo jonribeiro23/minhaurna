@@ -12,6 +12,8 @@ $route['simulador'] = 'Simulador';
 $route['votacao'] = 'Simulador/votacao';
 $route['computar-voto'] = 'Simulador/computarVoto';
 $route['ja-votou'] = 'Simulador/jaVotou';
+$route['resultados'] = 'Simulador/resultados';
+$route['contagem-de-votos'] = 'Simulador/contagemVotos';
 
 #Anúncios
 $route['anuncie-conosco'] = 'Anuncios';
