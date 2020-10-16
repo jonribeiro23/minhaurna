@@ -24,7 +24,7 @@
 							<table>
 								<thead>
 									<tr>
-										<th>Número</th>
+										<!-- <th>Número</th> -->
 										<th>Nome</th>
 										<th>Partido</th>
 										<th>Votos</th>
@@ -35,7 +35,7 @@
 								<?php foreach ($data['vereadores'] as $vereador) { ?>
 								
 									<tr>
-										<td><?= $vereador['dados'][0]->numero ?></td>
+										<!-- <td><?= $vereador['dados'][0]->numero ?></td> -->
 										<td><?= $vereador['dados'][0]->nome ?></td>
 										<td><?= $vereador['dados'][0]->sigla_partido ?></td>
 										<td><?= $vereador['votos'] ?></td>

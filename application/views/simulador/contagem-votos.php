@@ -93,7 +93,7 @@
 								<?php foreach ($data['prefeitos'] as $prefeito) { ?>
 
 									<tr>
-										// <td><?= $prefeito['dados'][0]->numero ?></td>
+										<!-- <td><?= $prefeito['dados'][0]->numero ?></td> -->
 										<td><?= $prefeito['dados'][0]->nome ?></td>
 										<td><?= $prefeito['dados'][0]->sigla_partido ?></td>
 										<td><?= $prefeito['votos'] ?></td>

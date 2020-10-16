@@ -131,7 +131,7 @@ class Simulador extends CI_Controller {
 		$contagem_de_votos_prefeito = $this->enviaRequest($url_base.'selecionar_candidatos_resultados', $packagePrefeito);
 
 
-			// ONDENANDO VEREADORES POR QTD DE VOTOS
+			// ORDENANDO VEREADORES POR QTD DE VOTOS
 		$vereadores = (array) $contagem_de_votos_vereadores->msg;
 		$vereadores = array_map(function($arr){
 			return (array) $arr;
