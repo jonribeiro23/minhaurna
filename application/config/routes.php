@@ -11,6 +11,7 @@ $route['translate_uri_dashes'] = FALSE;
 $route['simulador'] = 'Simulador';
 $route['votacao'] = 'Simulador/votacao';
 $route['computar-voto'] = 'Simulador/computarVoto';
+$route['ja-votou'] = 'Simulador/jaVotou';
 
 #Anúncios
 $route['anuncie-conosco'] = 'Anuncios';

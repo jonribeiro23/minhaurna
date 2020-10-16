@@ -7,6 +7,12 @@ class Simulador extends CI_Controller {
 	}
 
 	public function votacao() {
+		$verificarSeJaVotou = $this->enviaRequest('http://localhost:5000/verificar_voto', json_encode(['email'=> $this->input->post('email')]));
+
+		if($verificarSeJaVotou->msg){
+			return redirect(base_url('ja-votou'));
+		}
+		
 		$dados = $this->input->post();
 		$data = [
 			'email'=> $this->input->post('email'),
@@ -18,6 +24,12 @@ class Simulador extends CI_Controller {
 	}
 
 	public function computarVoto() {
+
+		$verificarSeJaVotou = $this->enviaRequest('http://localhost:5000/verificar_voto', json_encode(['email'=> $this->input->post('email')]));
+
+		if($verificarSeJaVotou->msg){
+			return redirect(base_url('ja-votou'));
+		}
 		
 		$package = json_encode([
 			'email'=> $this->input->post('email'),
@@ -26,8 +38,6 @@ class Simulador extends CI_Controller {
 			'votos' =>[$this->input->post('votoVereador'), $this->input->post('votoPrefeito')]
 		]);
 
-		// var_dump($package);
-		// die();
 
 		$res = $this->enviaRequest('http://localhost:5000/computar_voto', $package);
 		
@@ -87,8 +97,13 @@ class Simulador extends CI_Controller {
 		}
 
 
-
+		// SETAR MSG DE ERRO CASO NÃO HAJA RESPOSTA DA API
 		// $this->load->view('template.php', ['view' => 'simulador/teste2', 'data' => []]);
+	}
+
+
+	public function jaVotou(){
+		return $this->load->view('template.php', ['view' => 'simulador/ja-votou', 'data' => []]);
 	}
 
 
