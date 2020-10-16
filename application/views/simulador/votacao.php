@@ -180,12 +180,15 @@
 <script>
 	window.onload = function() {
 		let anunciosVereadores = document.querySelectorAll('.anuncio')
+		let rodape = document.querySelector('#two')
+		rodape.parentNode.removeChild(rodape)
 				
 		if (screen.width < 740 || screen.height < 480) { 
 			anunciosVereadores.forEach(e => {
 				e.classList.remove('4u')
 
 			})
+
 
 		}
 	}

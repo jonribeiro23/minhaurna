@@ -61,6 +61,23 @@
 								</div>
 							</div>
 						</div>
+
+						<div>
+							<div class="box">
+								<div class="image fit">
+									<img src="<?= base_url('public/img/home/resultados.png')?>" alt="" />
+								</div>
+								<div class="content">
+									<header class="align-center">
+										<h2>Resultados</h2>
+									</header>
+									<p>Veja quem são os candidatos que estão liderando as intenções de voto em sua cidade</p>
+									<footer class="align-center">
+										<a href="<?= base_url('resultados')?>" class="button alt">Ver</a>
+									</footer>
+								</div>
+							</div>
+						</div>
 					</div>
 				</div>
 			</section>

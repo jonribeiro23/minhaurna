@@ -11,68 +11,87 @@
 		</div>
 	</article>				
 </section>
+
+<!-- One -->
+<section id="one" class="wrapper style2">
+	<div class="inner">
+		<div class="box" style="padding: 20px">
+			<h3>Se seu candidato não estiver na lista abaixo, isso significa que ele ainda não recebeu nenhum voto no simulador.</h3>
+		</div>
+	</div>
+</section>
+
+<!-- TABELAS -->
 <section id="one" class="wrapper style2">
 	<div class="inner">
 		<div class="grid-style">
-
 			<div>
 				<div class="box">
 					<div class="content">
-						<h4>Candidatos a Vereadores</h4>
-						<div class="table-wrapper">
-							<table>
-								<thead>
-									<tr>
-										<th>Número</th>
-										<th>Nome</th>
-										<th>Partido</th>
-										<th>Votos</th>
-									</tr>
-								</thead>
-								<tbody>
+						<h4>Candidatos a Vereador</h4>
+						<?php if(isset($data['vereadores'])){ ?>
+							<div class="table-wrapper">
+								<table>
+									<thead>
+										<tr>
+											<th>Número</th>
+											<th>Nome</th>
+											<th>Partido</th>
+											<th>Votos</th>
+										</tr>
+									</thead>
+									<tbody>
 
-								<?php foreach ($data['vereadores'] as $vereador) { ?>
-								
-									<tr>
-										<td><?= $vereador['dados'][0]->numero ?></td>
-										<td><?= $vereador['dados'][0]->nome ?></td>
-										<td><?= $vereador['dados'][0]->sigla_partido ?></td>
-										<td><?= $vereador['votos'] ?></td>
-									</tr>
+										<?php foreach ($data['vereadores'] as $vereador) { ?>
 
-								<?php } ?>
-									
-								</tbody>
-								<tfoot>
+											<tr>
+												<td><?= $vereador['dados'][0]->numero ?></td>
+												<td><?= $vereador['dados'][0]->nome ?></td>
+												<td><?= $vereador['dados'][0]->sigla_partido ?></td>
+												<td><?= $vereador['votos'] ?></td>
+											</tr>
+
+										<?php } ?>
+
+									</tbody>
+								<!-- <tfoot>
 									<tr>
-										<td colspan="2"></td>
+										<td colspan="3"></td>
 										<td>100.00</td>
 									</tr>
-								</tfoot>
+								</tfoot> -->
 							</table>
-						</div>		
+						<?php } ?>
 					</div>
+
+					<?php if(count($data['vereadores']) == 0){?>
+						<div align="center">
+							<h3>Não há votos para os candidatos de sua cidade. Seja o primeiro a votar.</h3>
+							<a class="button alt" href="<?= base_url('simulador') ?>">Votar</a>
+						</div>
+					<?php } ?>	
 				</div>
 			</div>
+		</div>
 
-			<div>
-				<div class="box">
-					<div class="content">
-						<h4>Candidatos a Vereadores</h4>
-						<div class="table-wrapper">
-							<table>
-								<thead>
-									<tr>
-										<th>Número</th>
-										<th>Nome</th>
-										<th>Partido</th>
-										<th>Votos</th>
-									</tr>
-								</thead>
-								<tbody>
+		<div>
+			<div class="box">
+				<div class="content">
+					<h4>Candidatos a Prefeito</h4>
+					<div class="table-wrapper">
+						<table>
+							<thead>
+								<tr>
+									<th>Número</th>
+									<th>Nome</th>
+									<th>Partido</th>
+									<th>Votos</th>
+								</tr>
+							</thead>
+							<tbody>
 
 								<?php foreach ($data['prefeitos'] as $prefeito) { ?>
-								
+
 									<tr>
 										<td><?= $prefeito['dados'][0]->numero ?></td>
 										<td><?= $prefeito['dados'][0]->nome ?></td>
@@ -81,28 +100,25 @@
 									</tr>
 
 								<?php } ?>
-									
-								</tbody>
-								<tfoot>
+
+							</tbody>
+								<!-- <tfoot>
 									<tr>
-										<td colspan="2"></td>
+										<td colspan="3"></td>
 										<td>100.00</td>
 									</tr>
-								</tfoot>
+								</tfoot> -->
 							</table>
-						</div>		
+						</div>
+						<?php if(count($data['vereadores']) == 0){?>
+							<div align="center">
+								<h3>Não há votos para os candidatos de sua cidade. Seja o primeiro a votar.</h3>
+								<a class="button alt" href="<?= base_url('simulador') ?>">Votar</a>
+							</div>
+						<?php } ?>			
 					</div>
 				</div>
 			</div>
-		</div>
-	</div>
-</section>
-
-<!-- One -->
-<section id="one" class="wrapper style2">
-	<div class="inner">
-		<div class="box">
-			
 		</div>
 	</div>
 </section>
