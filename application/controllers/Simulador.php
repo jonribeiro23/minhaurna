@@ -15,11 +15,18 @@ class Simulador extends CI_Controller {
 			return redirect(base_url('ja-votou'));
 		}
 
-		$dados = $this->input->post();
+		$packageAnuncios = json_encode([
+			'estado' => $this->input->post('estado'),
+			'cidade' => $this->input->post('cidade'),
+		]);
+
+		$anuncios = $this->enviaRequest('https://adm-mu.herokuapp.com/'.'listar-por-regiao', $packageAnuncios);
+
 		$data = [
 			'email'=> $this->input->post('email'),
 			'estado'=> $this->input->post('estado'),
-			'cidade'=> $this->input->post('cidade')
+			'cidade'=> $this->input->post('cidade'),
+			'anuncios' => $anuncios->msg
 		];
 		$this->load->view('template.php', ['view' => 'simulador/votacao', 'data' => $data]);
 
@@ -182,7 +189,7 @@ class Simulador extends CI_Controller {
 		curl_setopt($ch, CURLOPT_HTTPHEADER, array(
 			'Content-Type: application/json',
 			'Content-Length: ' . strlen($to_send))
-		);
+	);
 
 		$res = curl_exec($ch);
 		curl_close($ch);

@@ -10,7 +10,13 @@
 			</header>
 		</div>
 	</article>
-				
+
+</section>
+
+<section class="mt-5">
+	<div class="mt-5" align="center">
+		<h2>Candidatos de <?= $data['cidade'] ?> - <?= $data['estado'] ?></h2>
+	</div>
 </section>
 
 <!-- One -->
@@ -21,16 +27,58 @@
 			<div>
 
 				<!-- ANUNCIOS -->
-				<div class="box">
+				<div class="box" style="padding: 1em">
 					<div class="box alt">
 						<span class="image fit my-5"><a href="<?= base_url('anuncie-conosco')?>"><img src="<?= base_url('public/img/anuncio/anuncio-wide.png')?>" alt="" /></a></span>
 						<div class="row 50% uniform">
-							<div class="anuncio 4u"><span class="image fit"><a href="<?= base_url('anuncie-conosco')?>">  <!-- <img src="<?= base_url('public/img/anuncio/anuncio.png')?>" alt="" /> --></a></span>
-							</div>
-							<div class="anuncio 4u"><span class="image fit"><a href="<?= base_url('anuncie-conosco')?>">  <img src="<?= base_url('public/img/anuncio/anuncio.png')?>" alt="" /></a></span>
-							</div>
-							<div class="anuncio 4u"><span class="image fit"><a href="<?= base_url('anuncie-conosco')?>">  <!-- <img src="<?= base_url('public/img/anuncio/anuncio.png')?>" alt="" /> --></a></span>
-							</div>
+							<?php if (empty($anuncios)) { ?>
+								<div class="anuncio 4u">
+									<!-- <span class="image fit">
+										<a href="<?= base_url('anuncie-conosco')?>"> <img src="<?= base_url('public/img/anuncio/anuncio.png')?>" alt="" /></a>
+									</span> -->
+								</div>
+								<div class="anuncio 4u">
+									<span class="image fit">
+										<a href="<?= base_url('anuncie-conosco')?>"> <img src="<?= base_url('public/img/anuncio/anuncio.png')?>" alt="" /></a>
+									</span>
+								</div>
+								<div class="anuncio 4u">
+									<!-- <span class="image fit">
+										<a href="<?= base_url('anuncie-conosco')?>"> <img src="<?= base_url('public/img/anuncio/anuncio.png')?>" alt="" /></a>
+									</span> -->
+								</div>
+							<?php }else{ ?>
+								<?php if ($data['cidade'] == 'SANTOS' && $data['estado'] == 'SP') {?>
+
+									<div class="anuncio 4u">
+										<span class="image fit">
+											<a target="_blank" href="https://www.facebook.com/vereadoranaymaita">  <img src="http://growx.app.br/wp-content/uploads/2020/10/nayma.jpg" alt=" Vereadora Nayma Itá" />
+											</a>
+										</span>
+									</div>
+									<div class="anuncio 4u">
+										<span class="image fit">
+											<a target="_blank" href="https://www.facebook.com/vereadoranaymaita">  <img src="http://growx.app.br/wp-content/uploads/2020/10/nayma.jpg" alt=" Vereadora Nayma Itá" />
+											</a>
+										</span>
+									</div>
+									<div class="anuncio 4u">
+										<span class="image fit">
+											<a target="_blank" href="https://www.facebook.com/vereadoranaymaita">  <img src="http://growx.app.br/wp-content/uploads/2020/10/nayma.jpg" alt=" Vereadora Nayma Itá" />
+											</a>
+										</span>
+									</div>
+								<?php }else{ ?>
+									<?php foreach ($anuncios as $anuncio) { ?>
+										<div class="anuncio 4u">
+											<span class="image fit">
+												<a target="_blank" href="<?= $anuncio->link_rede_social ?>">  <img src="<?= $anuncio->link_img1 ?>" alt="" />
+												</a>
+											</span>
+										</div>
+									<?php } ?>
+								<?php } ?>
+							<?php } ?>
 						</div>
 					</div>
 				</div>
@@ -39,12 +87,12 @@
 					<h2>Simulador Eleitoral</h2>
 					<p>Digite o número do candidato ou se quiser votar em branco/nulo, clique no botão "Branco/Nulo". Depois clique em "Confirmar".</p>
 				</header>
-				
+
 				<!-- VEREADOR -->
 				<div class="box">
 					<div id="vereadorEscolhido" class="content">
 						<div id="divVereador">
-							
+
 							<div class="12u$ my-4">
 								<label for="vereador">Seu voto para vereador</label>
 								<input type="text" name="vereador" id="numeroVereador" value="" placeholder="Ex: 99999" />
@@ -118,7 +166,7 @@
 					</div>
 				</div>
 			</div>
-			
+
 			<!-- <div class="">
 				<p><strong>Nome:</strong> <span id="nomeVereador">Aline e A Bancada Estudantil</span></p>
 				<p><strong>Número:</strong> <span id="numeroVereadorUrna">65180</span></p>
@@ -150,15 +198,15 @@
 		</div>
 		<div class="modal-body" align="center">
 			<div class="box" >
-						<div class="box alt">
-							<div id="boxPrefeito" class="row 50% uniform">
-								<div class=" 4u"></div>
-								<div class=" 4u"><span class="image fit"><a href="<?= base_url('anuncie-conosco')?>"> <img id="fotoPrefeito" alt="" /></a></span>
-								</div>
-								<div class=" 4u"></div>
-							</div>
+				<div class="box alt">
+					<div id="boxPrefeito" class="row 50% uniform">
+						<div class=" 4u"></div>
+						<div class=" 4u"><span class="image fit"><a href="<?= base_url('anuncie-conosco')?>"> <img id="fotoPrefeito" alt="" /></a></span>
 						</div>
+						<div class=" 4u"></div>
 					</div>
+				</div>
+			</div>
 			
 			<div id="novosDadosPrefeito">
 				<div id="dadosPrefeito" class="">
@@ -182,7 +230,7 @@
 		let anunciosVereadores = document.querySelectorAll('.anuncio')
 		let rodape = document.querySelector('#two')
 		rodape.parentNode.removeChild(rodape)
-				
+
 		if (screen.width < 740 || screen.height < 480) { 
 			anunciosVereadores.forEach(e => {
 				e.classList.remove('4u')
