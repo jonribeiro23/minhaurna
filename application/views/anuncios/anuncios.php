@@ -109,7 +109,8 @@
 						<p>Disponibilizamos três espaços publicitários por cidade, para que cadidatos à vereador possam anunciar sua campanha e suas redes sociais. Contrate agora e aumente suas chances de ser eleito!</p>
 						<p> R$ 39,90/Semana</p>
 						<footer class="align-center">
-							<a href="#" class="button alt">Contratar</a>
+							<a href="#" class="button alt">Contratar 2 Semanas</a>
+							<a href="#" class="button alt">Contratar 4 Semanas</a>
 						</footer>
 					</div>
 				</div>
@@ -127,7 +128,8 @@
 						<p>Disponibilizamos um espaço publicitário por cidade, para que um candidato à prefeito possa anunciar sua campanha e suas redes sociais. Contrate agora e aumente suas chances de ser eleito!</p>
 						<p> R$ 59,90/Semana</p>
 						<footer class="align-center">
-							<a href="#" class="button alt">Contratar</a>
+							<a href="#" class="button alt">Contratar 2 Semanas</a>
+							<a href="#" class="button alt">Contratar 4 Semanas</a>
 						</footer>
 					</div>
 				</div>

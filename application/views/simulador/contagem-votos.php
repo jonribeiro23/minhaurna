@@ -12,6 +12,8 @@
 	</article>				
 </section>
 
+<!-- <?php var_dump($data); ?> -->
+
 <!-- One -->
 <section id="one" class="wrapper style2">
 	<div class="inner">
